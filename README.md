@@ -1,4 +1,4 @@
-# canvas2image node module wrapper
+# canvas2image ES6
 
 Canvas2Image cannot be imported as a module and seems to no longer be maintained.
 
