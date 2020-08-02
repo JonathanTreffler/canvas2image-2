@@ -1,7 +1,8 @@
 # canvas2image node module wrapper
 
 Canvas2Image cannot be imported as a module and seems to no longer be maintained.
-This repository contains the canvas to image code + a export default ...
+
+This repository contains the original code and a export statement.
 
 ### Usage
 ```bash
