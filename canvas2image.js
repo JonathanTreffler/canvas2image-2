@@ -43,9 +43,11 @@ function getDataURL(canvas, type, width, height) {
 	canvas = scaleCanvas(canvas, width, height);
 	return canvas.toDataURL(type);
 }
-
-function saveFile(strData) {
-	document.location.href = strData;
+function saveFile(strData, fileType, fileName = "download") {
+	let saveLink = document.createElement("a");
+	saveLink.download = fileName + "." + fileType;
+	saveLink.href = strData;
+	saveLink.click();
 }
 
 function genImage(strData) {
@@ -216,10 +218,10 @@ var saveAsImage = function(canvas, width, height, type) {
 		if (/bmp/.test(type)) {
 			var data = getImageData(scaleCanvas(canvas, width, height));
 			var strData = genBitmapImage(data);
-			saveFile(makeURI(strData, downloadMime));
+			saveFile(makeURI(strData, downloadMime), type);
 		} else {
 			var strData = getDataURL(canvas, type, width, height);
-			saveFile(strData.replace(type, downloadMime));
+			saveFile(strData.replace(type, downloadMime), type);
 		}
 	}
 };
