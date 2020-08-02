@@ -206,7 +206,7 @@ var genBitmapImage = function(oData) {
  * @param {Number} [optional] png width
  * @param {Number} [optional] png height
  */
-var saveAsImage = function(canvas, width, height, type) {
+var saveAsImage = function(canvas, width, height, fileType) {
 	if ($support.canvas && $support.dataURL) {
 		if (typeof canvas == "string") {
 			canvas = document.getElementById(canvas);
@@ -214,14 +214,14 @@ var saveAsImage = function(canvas, width, height, type) {
 		if (type == undefined) {
 			type = 'png';
 		}
-		type = fixType(type);
+		type = fixType(fileType);
 		if (/bmp/.test(type)) {
 			var data = getImageData(scaleCanvas(canvas, width, height));
 			var strData = genBitmapImage(data);
-			saveFile(makeURI(strData, downloadMime), type);
+			saveFile(makeURI(strData, downloadMime), fileType);
 		} else {
 			var strData = getDataURL(canvas, type, width, height);
-			saveFile(strData.replace(type, downloadMime), type);
+			saveFile(strData.replace(type, downloadMime), fileType);
 		}
 	}
 };
