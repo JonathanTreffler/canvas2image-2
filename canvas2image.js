@@ -211,10 +211,10 @@ var saveAsImage = function(canvas, width, height, fileType) {
 		if (typeof canvas == "string") {
 			canvas = document.getElementById(canvas);
 		}
-		if (type == undefined) {
-			type = 'png';
+		if (fileType == undefined) {
+			fileType = 'png';
 		}
-		type = fixType(fileType);
+		let type = fixType(fileType);
 		if (/bmp/.test(type)) {
 			var data = getImageData(scaleCanvas(canvas, width, height));
 			var strData = genBitmapImage(data);
