@@ -1,0 +1,23 @@
+{
+  "name": "canvas2image-module-wrapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "canvas2image.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TessyPowder/canvas2image-module-wrapper.git"
+  },
+  "keywords": [
+    "wrapper",
+    "canvas2image"
+  ],
+  "author": "Jonathan Treffler",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/TessyPowder/canvas2image-module-wrapper/issues"
+  },
+  "homepage": "https://github.com/TessyPowder/canvas2image-module-wrapper#readme"
+}
