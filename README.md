@@ -6,11 +6,11 @@ This repository contains the original code, a few changes and a export statement
 
 ### Usage
 ```bash
-npm install canvas2image-module-wrapper
+npm install canvas2image-es6
 ```
 
 ```js
-import canvas2image from "canvas2image-module-wrapper";
+import canvas2image from "canvas2image-es6";
 
 canvas2image.convertToPNG(canvas, 400, 400);
 ```
