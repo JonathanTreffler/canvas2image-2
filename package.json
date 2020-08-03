@@ -1,6 +1,6 @@
 {
-  "name": "canvas2image-module-wrapper",
-  "version": "1.3.1",
+  "name": "canvas2image-es6",
+  "version": "1.0.0",
   "description": "",
   "main": "canvas2image.js",
   "scripts": {
@@ -12,7 +12,8 @@
   },
   "keywords": [
     "wrapper",
-    "canvas2image"
+    "canvas2image",
+    "es6"
   ],
   "author": "Jonathan Treffler",
   "license": "GPL-3.0",
