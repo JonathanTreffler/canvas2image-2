@@ -1,6 +1,6 @@
 {
   "name": "canvas2image-2",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "",
   "main": "canvas2image.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TessyPowder/canvas2image-2.git"
+    "url": "git+https://github.com/JonathanTreffler/canvas2image-2.git"
   },
   "keywords": [
     "wrapper",
@@ -18,7 +18,7 @@
   "author": "Jonathan Treffler",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/TessyPowder/canvas2image-2/issues"
+    "url": "https://github.com/JonathanTreffler/canvas2image-2/issues"
   },
-  "homepage": "https://github.com/TessyPowder/canvas2image-2#readme"
+  "homepage": "https://github.com/JonathanTreffler/canvas2image-2#readme"
 }
