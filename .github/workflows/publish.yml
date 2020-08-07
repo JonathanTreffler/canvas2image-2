@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-          scope: '@TessyPowder'
+          scope: '@JonathanTreffler'
       - run: echo registry=https://npm.pkg.github.com/@TessyPowder >> .npmrc
       - run: npm publish
         env:
