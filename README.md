@@ -1,3 +1,11 @@
+[![npm](https://img.shields.io/npm/v/canvas2image-2?style=flat-square)](https://www.npmjs.com/package/vuejs-quill)
+[![npm bundle size](https://img.shields.io/bundlephobia/min/canvas2image-2?style=flat-square)](https://www.npmjs.com/package/vuejs-quill)
+[![npm](https://img.shields.io/npm/dt/canvas2image-2?style=flat-square)](https://www.npmjs.com/package/vuejs-quill)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/JonathanTreffler/canvas2image-2/Lint?label=Lint&style=flat-square)
+![GitHub](https://img.shields.io/github/license/JonathanTreffler/canvas2image-2?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/JonathanTreffler/canvas2image-2?style=flat-square)
+[![Maintenance](https://img.shields.io/maintenance/yes/2020?style=flat-square)](https://github.com/JonathanTreffler/canvas2image-2/commits/)
+
 # canvas2image 2
 
 Canvas2Image cannot be imported as a module and seems to no longer be maintained.
