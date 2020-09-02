@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/JonathanTreffler/canvas2image-2/issues"
   },
-  "homepage": "https://github.com/JonathanTreffler/canvas2image-2#readme"
+  "homepage": "https://github.com/JonathanTreffler/canvas2image-2#readme",
+  "devDependencies": {
+    "eslint-config-jonathantreffler": "^1.5.0"
+  }
 }
