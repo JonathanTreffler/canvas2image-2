@@ -218,10 +218,10 @@ var saveAsImage = function(canvas, width, height, fileType) {
 		let type = fixType(fileType);
 		if (/bmp/.test(type)) {
 			var data = getImageData(scaleCanvas(canvas, width, height));
-			var strData = genBitmapImage(data);
+			let strData = genBitmapImage(data);
 			saveFile(makeURI(strData, downloadMime), fileType);
 		} else {
-			var strData = getDataURL(canvas, type, width, height);
+			let strData = getDataURL(canvas, type, width, height);
 			saveFile(strData.replace(type, downloadMime), fileType);
 		}
 	}
@@ -239,10 +239,10 @@ var convertToImage = function(canvas, width, height, type) {
 
 		if (/bmp/.test(type)) {
 			var data = getImageData(scaleCanvas(canvas, width, height));
-			var strData = genBitmapImage(data);
+			let strData = genBitmapImage(data);
 			return genImage(makeURI(strData, "image/bmp"));
 		} else {
-			var strData = getDataURL(canvas, type, width, height);
+			let strData = getDataURL(canvas, type, width, height);
 			return genImage(strData);
 		}
 	}
