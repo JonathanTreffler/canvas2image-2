@@ -8,18 +8,18 @@
 
 // check if support sth.
 var $support = function() {
-	var canvas = document.createElement('canvas'),
-		ctx = canvas.getContext('2d');
+	var canvas = document.createElement("canvas"),
+		ctx = canvas.getContext("2d");
 
 	return {
 		canvas: !!ctx,
 		imageData: !!ctx.getImageData,
 		dataURL: !!canvas.toDataURL,
-		btoa: !!window.btoa
+		btoa: !!window.btoa,
 	};
 }();
 
-var downloadMime = 'image/octet-stream';
+var downloadMime = "image/octet-stream";
 
 function scaleCanvas(canvas, width, height) {
 	var w = canvas.width,
@@ -31,8 +31,8 @@ function scaleCanvas(canvas, width, height) {
 		height = h;
 	}
 
-	var retCanvas = document.createElement('canvas');
-	var retCtx = retCanvas.getContext('2d');
+	var retCanvas = document.createElement("canvas");
+	var retCtx = retCanvas.getContext("2d");
 	retCanvas.width = width;
 	retCanvas.height = height;
 	retCtx.drawImage(canvas, 0, 0, w, h, 0, 0, width, height);
@@ -43,6 +43,7 @@ function getDataURL(canvas, type, width, height) {
 	canvas = scaleCanvas(canvas, width, height);
 	return canvas.toDataURL(type);
 }
+// eslint-disable-next-line
 function saveFile(strData, fileType, fileName = "download") {
 	let saveLink = document.createElement("a");
 	saveLink.download = fileName + "." + fileType;
@@ -51,23 +52,23 @@ function saveFile(strData, fileType, fileName = "download") {
 }
 
 function genImage(strData) {
-	var img = document.createElement('img');
+	var img = document.createElement("img");
 	img.src = strData;
 	return img;
 }
 
 function fixType(type) {
-	type = type.toLowerCase().replace(/jpg/i, 'jpeg');
+	type = type.toLowerCase().replace(/jpg/i, "jpeg");
 	var r = type.match(/png|jpeg|bmp|gif/)[0];
-	return 'image/' + r;
+	return "image/" + r;
 }
 
 function encodeData(data) {
 	if (!window.btoa) {
-		throw 'btoa undefined'
+		throw "btoa undefined";
 	}
-	var str = '';
-	if (typeof data == 'string') {
+	var str = "";
+	if (typeof data == "string") {
 		str = data;
 	} else {
 		for (var i = 0; i < data.length; i++) {
@@ -81,11 +82,11 @@ function encodeData(data) {
 function getImageData(canvas) {
 	var w = canvas.width,
 		h = canvas.height;
-	return canvas.getContext('2d').getImageData(0, 0, w, h);
+	return canvas.getContext("2d").getImageData(0, 0, w, h);
 }
 
 function makeURI(strData, type) {
-	return 'data:' + type + ';base64,' + strData;
+	return "data:" + type + ";base64," + strData;
 }
 
 
@@ -124,7 +125,7 @@ var genBitmapImage = function(oData) {
 		// WORD bfReserved2 -- Reserved; must be zero
 		0, 0,
 		// DWORD bfOffBits -- The offset, in bytes, from the beginning of the BITMAPFILEHEADER structure to the bitmap bits.
-		54, 0, 0, 0
+		54, 0, 0, 0,
 	];
 
 	//
@@ -165,21 +166,21 @@ var genBitmapImage = function(oData) {
 		// DWORD biClrUsed, the number of color indexes of palette, unused
 		0, 0, 0, 0,
 		// DWORD biClrImportant, unused
-		0, 0, 0, 0
+		0, 0, 0, 0,
 	];
 
 	var iPadding = (4 - ((biWidth * 3) % 4)) % 4;
 
 	var aImgData = oData.data;
 
-	var strPixelData = '';
+	var strPixelData = "";
 	var biWidth4 = biWidth << 2;
 	var y = biHeight;
 	var fromCharCode = String.fromCharCode;
 
 	do {
 		var iOffsetY = biWidth4 * (y - 1);
-		var strPixelRow = '';
+		var strPixelRow = "";
 		for (var x = 0; x < biWidth; x++) {
 			var iOffsetX = x << 2;
 			strPixelRow += fromCharCode(aImgData[iOffsetY + iOffsetX + 2]) +
@@ -212,7 +213,7 @@ var saveAsImage = function(canvas, width, height, fileType) {
 			canvas = document.getElementById(canvas);
 		}
 		if (fileType == undefined) {
-			fileType = 'png';
+			fileType = "png";
 		}
 		let type = fixType(fileType);
 		if (/bmp/.test(type)) {
@@ -232,14 +233,14 @@ var convertToImage = function(canvas, width, height, type) {
 			canvas = document.getElementById(canvas);
 		}
 		if (type == undefined) {
-			type = 'png';
+			type = "png";
 		}
 		type = fixType(type);
 
 		if (/bmp/.test(type)) {
 			var data = getImageData(scaleCanvas(canvas, width, height));
 			var strData = genBitmapImage(data);
-			return genImage(makeURI(strData, 'image/bmp'));
+			return genImage(makeURI(strData, "image/bmp"));
 		} else {
 			var strData = getDataURL(canvas, type, width, height);
 			return genImage(strData);
@@ -252,29 +253,29 @@ var convertToImage = function(canvas, width, height, type) {
 export default {
 	saveAsImage: saveAsImage,
 	saveAsPNG: function(canvas, width, height) {
-		return saveAsImage(canvas, width, height, 'png');
+		return saveAsImage(canvas, width, height, "png");
 	},
 	saveAsJPEG: function(canvas, width, height) {
-		return saveAsImage(canvas, width, height, 'jpeg');
+		return saveAsImage(canvas, width, height, "jpeg");
 	},
 	saveAsGIF: function(canvas, width, height) {
-		return saveAsImage(canvas, width, height, 'gif');
+		return saveAsImage(canvas, width, height, "gif");
 	},
 	saveAsBMP: function(canvas, width, height) {
-		return saveAsImage(canvas, width, height, 'bmp');
+		return saveAsImage(canvas, width, height, "bmp");
 	},
 
 	convertToImage: convertToImage,
 	convertToPNG: function(canvas, width, height) {
-		return convertToImage(canvas, width, height, 'png');
+		return convertToImage(canvas, width, height, "png");
 	},
 	convertToJPEG: function(canvas, width, height) {
-		return convertToImage(canvas, width, height, 'jpeg');
+		return convertToImage(canvas, width, height, "jpeg");
 	},
 	convertToGIF: function(canvas, width, height) {
-		return convertToImage(canvas, width, height, 'gif');
+		return convertToImage(canvas, width, height, "gif");
 	},
 	convertToBMP: function(canvas, width, height) {
-		return convertToImage(canvas, width, height, 'bmp');
-	}
+		return convertToImage(canvas, width, height, "bmp");
+	},
 };
