@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.PUBLISH_NPM_TOKEN }}
@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
           registry-url: https://npm.pkg.github.com/
           scope: '@JonathanTreffler'
       - run: echo registry=https://npm.pkg.github.com/@JonathanTreffler >> .npmrc
