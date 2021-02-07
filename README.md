@@ -5,7 +5,7 @@
 ![GitHub CodeQL Workflow Status](https://img.shields.io/github/workflow/status/JonathanTreffler/canvas2image-2/CodeQL?label=CodeQL&style=flat-square)
 ![GitHub](https://img.shields.io/github/license/JonathanTreffler/canvas2image-2?style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/JonathanTreffler/canvas2image-2?style=flat-square)
-[![Maintenance](https://img.shields.io/maintenance/yes/2020?style=flat-square)](https://github.com/JonathanTreffler/canvas2image-2/commits/)
+[![Maintenance](https://img.shields.io/maintenance/yes/2021?style=flat-square)](https://github.com/JonathanTreffler/canvas2image-2/commits/)
 
 # canvas2image 2
 
